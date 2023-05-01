@@ -22,8 +22,18 @@ public class LeiloesPage {
 	}
 
 	public boolean existe(String nomeProduto, String valor, String usuario) {
-		return driver.getCurrentUrl().endsWith("/leiloes") && driver.getPageSource().contains(nomeProduto) && 
-				driver.getPageSource().contains(valor);
+		return driver.getCurrentUrl().endsWith("/leiloes") &&
+				driver.getPageSource().contains(nomeProduto) &&
+				driver.getPageSource().contains(valor) &&
+				driver.getPageSource().contains(usuario);
+	}
+
+	public boolean existe(String nomeProduto,String data, String valor, String usuario) {
+		return driver.getCurrentUrl().endsWith("/leiloes") &&
+			   driver.getPageSource().contains(nomeProduto) &&
+			   driver.getPageSource().contains(valor) &&
+			   driver.getPageSource().contains(data) &&
+			   driver.getPageSource().contains(usuario);
 	}
 
 	public NovoLeilaoPage visitaPaginaParaCriarUmNovoLeilao() {
